@@ -1,36 +1,33 @@
 ﻿using System.Collections.Generic;
+using System.Net.Http;
 using System.Web.Http;
-using TrungNguyenDlu.LogApi.Models.Base;
 
 namespace TrungNguyenDlu.LogApi.Controllers
 {
-    public class ValuesController : ApiController
+    [RoutePrefix("api/values")]
+    public class ValuesController : BaseApiController
     {
-        // GET api/values
-        public IEnumerable<string> Get()
+        private readonly IList<string> _values;
+
+        public ValuesController()
         {
-            return new string[] { "value1", "value2" };
+            _values = new List<string> {"value 1", "value 2", "value 3"};
         }
 
-        // GET api/values/5
-        public ResponseModel<int> Get(int id)
+        [Route("GetAllValues")]
+        public HttpResponseMessage GetAllValues()
         {
-            return ResponseModel<int>.SuccessResponse(id, "success");
+            return SuccessMessage(_values, "Get all values successfully.");
         }
 
-        // POST api/values
-        public void Post([FromBody]string value)
+        [Route("GetByIndex/{index}")]
+        public HttpResponseMessage GetByIndex(int index)
         {
-        }
-
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
+            if (index < 0 || index >= _values.Count)
+            {
+                return ErrorMessage("Index was out of range. Must be non-negative and less than the size of the collection");
+            }
+            return SuccessMessage(_values[index], "Get value successfully.");
         }
     }
 }

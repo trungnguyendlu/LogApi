@@ -13,7 +13,7 @@ namespace TrungNguyenDlu.LogApi.Infrastructure.Log
 
         public ApiRequestLogHandler()
         {
-            _logger = LogManager.GetLogger("");
+            _logger = LogManager.GetLogger("LogApi");
         }
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
