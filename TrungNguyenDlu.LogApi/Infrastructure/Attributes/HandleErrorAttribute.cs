@@ -12,7 +12,12 @@ namespace TrungNguyenDlu.LogApi.Infrastructure.Attributes
 {
     public sealed class HandleErrorAttribute : ExceptionFilterAttribute
     {
-        private readonly ILog _log = LogManager.GetLogger("LogApi");
+        private readonly ILog _log;
+
+        public HandleErrorAttribute()
+        {
+            _log = LogManager.GetLogger("LogApi");
+        }
 
         public override async void OnException(HttpActionExecutedContext context)
         {
@@ -21,7 +26,7 @@ namespace TrungNguyenDlu.LogApi.Infrastructure.Attributes
             var response = new ResponseModel<object>
             {
                 Success = false,
-                Message = exception?.Message,
+                Message = "Internal server error",
                 Data = null
             };
 
@@ -32,12 +37,12 @@ namespace TrungNguyenDlu.LogApi.Infrastructure.Attributes
             };
 
             var input = string.Empty;
-            if (context.Request.Content!= null)
+            if (context.Request.Content != null)
             {
                 input = await context.Request.Content.ReadAsStringAsync();
             }
 
-            _log.FatalFormat("Exception {0} - input : {1} - response : {2}", context.Request.RequestUri, input.Dump(), context.Dump());
+            _log.FatalFormat("Exception {0} - message: {1} - input: {2} - response: {3}", context.Request.RequestUri, exception.Dump(), input.Dump(), context.Dump());
         }
 
         public override Task OnExceptionAsync(HttpActionExecutedContext context, CancellationToken cancellationToken)
@@ -45,7 +50,7 @@ namespace TrungNguyenDlu.LogApi.Infrastructure.Attributes
             var task = base.OnExceptionAsync(context, cancellationToken);
             return task.ContinueWith(t =>
             {
-                OnException(context);              
+                OnException(context);
             }, cancellationToken);
         }
     }

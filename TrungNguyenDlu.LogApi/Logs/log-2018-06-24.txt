@@ -2,3 +2,265 @@
 2018-06-24 08:48:28,865 [7] INFO  LogApi - [GET] Success http://localhost:54065/api/values/GetAllValues/ - input:  - output: {"Success":true,"Message":"Get all values successfully.","Data":["value 1","value 2","value 3"]}
 2018-06-24 08:49:54,798 [6] ERROR LogApi - [GET] Fail http://localhost:54065/api/values/GetByIndex/5 - error: Index was out of range. Must be non-negative and less than the size of the collection - input :  - output: {"Success":false,"Message":"Index was out of range. Must be non-negative and less than the size of the collection","Data":null}
 2018-06-24 08:49:58,698 [6] INFO  LogApi - [GET] Success http://localhost:54065/api/values/GetByIndex/1 - input:  - output: {"Success":true,"Message":"Get value successfully.","Data":"value 2"}
+2018-06-24 09:20:24,594 [7] ERROR LogApi - [GET] Fail http://localhost:54065/api/simplevalues/GetByIndex/1 - error:  - input :  - output: {"<Success>k__BackingField":true,"<Message>k__BackingField":"Get value successfully.","<Data>k__BackingField":"value 2"}
+2018-06-24 09:20:47,007 [7] INFO  LogApi - GetAllValues response: [
+	value 1,
+	value 2,
+	value 3
+]
+2018-06-24 09:20:47,031 [5] ERROR LogApi - [GET] Fail http://localhost:54065/api/simplevalues/GetAllValues/ - error:  - input :  - output: {"<Success>k__BackingField":true,"<Message>k__BackingField":"Get all values successfully.","<Data>k__BackingField":["value 1","value 2","value 3"]}
+2018-06-24 09:46:37,072 [6] INFO  LogApi - [GET] Success http://localhost:54065/api/values/GetAllValues/ - input:  - output: {"Success":true,"Message":"Get all values successfully.","Data":["value 1","value 2","value 3"]}
+2018-06-24 10:48:15,897 [6] INFO  LogApi - [GET] Success http://localhost:54065/api/values/GetAllValues/ - input:  - output: {"Success":true,"Message":"Get all values successfully.","Data":["value 1","value 2","value 3"]}
+2018-06-24 10:57:03,040 [5] FATAL LogApi - Exception http://localhost:54065/api/values/GetByIndex/5 - message: {
+	Message: "Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index",
+	ParamName: index,
+	Data: {},
+	TargetSite: "Void ThrowArgumentOutOfRangeException(System.ExceptionArgument, System.ExceptionResource)",
+	StackTrace: "   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at TrungNguyenDlu.LogApi.Controllers.ValuesController.GetByIndex(Int32 index) in D:\GitHub\Log\LogApi\TrungNguyenDlu.LogApi\Controllers\ValuesController.cs:line 31
+   at lambda_method(Closure , Object , Object[
+		
+	] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[
+		
+	] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[
+		
+	] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()",
+	Source: mscorlib,
+	HResult: -2146233086
+} - input: "" - response: {
+	ActionContext: System.Web.Http.Controllers.HttpActionContext,
+	Exception: "System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at TrungNguyenDlu.LogApi.Controllers.ValuesController.GetByIndex(Int32 index) in D:\GitHub\Log\LogApi\TrungNguyenDlu.LogApi\Controllers\ValuesController.cs:line 31
+   at lambda_method(Closure , Object , Object[
+		
+	] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[
+		
+	] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[
+		
+	] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()",
+	Response: 
+	{
+		Version: 
+		{
+			Major: 1,
+			Minor: 1,
+			Build: -1,
+			Revision: -1,
+			MajorRevision: -1,
+			MinorRevision: -1
+		},
+		Content: 
+		{
+			Headers: 
+			[
+				{
+					__type: "System.Collections.Generic.KeyValuePair`2[
+						[
+							System.String, mscorlib
+						],[
+							System.Collections.Generic.IEnumerable`1[
+								[
+									System.String, mscorlib
+								]
+							], mscorlib
+						]
+					], mscorlib",
+					Key: Content-Type,
+					Value: 
+					[
+						application/json; charset=utf-8
+					]
+				}
+			]
+		},
+		StatusCode: OK,
+		ReasonPhrase: OK,
+		Headers: [],
+		IsSuccessStatusCode: True
+	},
+	Request: "Method: GET, RequestUri: 'http://localhost:54065/api/values/GetByIndex/5', Version: 1.1, Content: System.Web.Http.WebHost.HttpControllerHandler+LazyStreamContent, Headers:
+{
+		
+  Connection:  keep-alive
+  Accept: text/html
+  Accept: application/xhtml+xml
+  Accept: application/xml; q=0.9
+  Accept: */*; q=0.8
+  Accept-Encoding: gzip
+  Accept-Encoding: deflate
+  Accept-Language: vi-VN
+  Accept-Language: vi; q=0.8
+  Accept-Language: en-US; q=0.5
+  Accept-Language: en; q=0.3
+  Host: localhost:54065
+  User-Agent: Mozilla/5.0
+  User-Agent: (Windows NT 10.0; Win64; x64; rv:60.0)
+  User-Agent: Gecko/20100101
+  User-Agent: Firefox/60.0
+  Upgrade-Insecure-Requests: 1
+  Content-Length: 0
+
+	}"
+}
+2018-06-24 10:57:03,104 [7] FATAL LogApi - Exception http://localhost:54065/api/values/GetByIndex/5 - message: {
+	Message: "Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index",
+	ParamName: index,
+	Data: {},
+	TargetSite: "Void ThrowArgumentOutOfRangeException(System.ExceptionArgument, System.ExceptionResource)",
+	StackTrace: "   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at TrungNguyenDlu.LogApi.Controllers.ValuesController.GetByIndex(Int32 index) in D:\GitHub\Log\LogApi\TrungNguyenDlu.LogApi\Controllers\ValuesController.cs:line 31
+   at lambda_method(Closure , Object , Object[
+		
+	] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[
+		
+	] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[
+		
+	] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()",
+	Source: mscorlib,
+	HResult: -2146233086
+} - input: "" - response: {
+	ActionContext: System.Web.Http.Controllers.HttpActionContext,
+	Exception: "System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at TrungNguyenDlu.LogApi.Controllers.ValuesController.GetByIndex(Int32 index) in D:\GitHub\Log\LogApi\TrungNguyenDlu.LogApi\Controllers\ValuesController.cs:line 31
+   at lambda_method(Closure , Object , Object[
+		
+	] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[
+		
+	] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[
+		
+	] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()",
+	Response: 
+	{
+		Version: 
+		{
+			Major: 1,
+			Minor: 1,
+			Build: -1,
+			Revision: -1,
+			MajorRevision: -1,
+			MinorRevision: -1
+		},
+		Content: 
+		{
+			Headers: 
+			[
+				{
+					__type: "System.Collections.Generic.KeyValuePair`2[
+						[
+							System.String, mscorlib
+						],[
+							System.Collections.Generic.IEnumerable`1[
+								[
+									System.String, mscorlib
+								]
+							], mscorlib
+						]
+					], mscorlib",
+					Key: Content-Type,
+					Value: 
+					[
+						application/json; charset=utf-8
+					]
+				}
+			]
+		},
+		StatusCode: OK,
+		ReasonPhrase: OK,
+		Headers: [],
+		IsSuccessStatusCode: True
+	},
+	Request: "Method: GET, RequestUri: 'http://localhost:54065/api/values/GetByIndex/5', Version: 1.1, Content: System.Web.Http.WebHost.HttpControllerHandler+LazyStreamContent, Headers:
+{
+		
+  Connection:  keep-alive
+  Accept: text/html
+  Accept: application/xhtml+xml
+  Accept: application/xml; q=0.9
+  Accept: */*; q=0.8
+  Accept-Encoding: gzip
+  Accept-Encoding: deflate
+  Accept-Language: vi-VN
+  Accept-Language: vi; q=0.8
+  Accept-Language: en-US; q=0.5
+  Accept-Language: en; q=0.3
+  Host: localhost:54065
+  User-Agent: Mozilla/5.0
+  User-Agent: (Windows NT 10.0; Win64; x64; rv:60.0)
+  User-Agent: Gecko/20100101
+  User-Agent: Firefox/60.0
+  Upgrade-Insecure-Requests: 1
+  Content-Length: 0
+
+	}"
+}
+2018-06-24 10:57:03,266 [9] ERROR LogApi - [GET] Fail http://localhost:54065/api/values/GetByIndex/5 - error: Internal server error - input :  - output: {"Success":false,"Message":"Internal server error","Data":null}

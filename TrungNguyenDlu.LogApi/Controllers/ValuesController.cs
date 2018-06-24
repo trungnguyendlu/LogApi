@@ -11,7 +11,7 @@ namespace TrungNguyenDlu.LogApi.Controllers
 
         public ValuesController()
         {
-            _values = new List<string> {"value 1", "value 2", "value 3"};
+            _values = new List<string> { "value 1", "value 2", "value 3" };
         }
 
         [Route("GetAllValues")]
@@ -23,10 +23,11 @@ namespace TrungNguyenDlu.LogApi.Controllers
         [Route("GetByIndex/{index}")]
         public HttpResponseMessage GetByIndex(int index)
         {
-            if (index < 0 || index >= _values.Count)
-            {
-                return ErrorMessage("Index was out of range. Must be non-negative and less than the size of the collection");
-            }
+            //todo: throw exception when index < 0 or index > _values.count
+            //if (index < 0 || index >= _values.Count)
+            //{
+            //    return ErrorMessage("Index was out of range. Must be non-negative and less than the size of the collection");
+            //}
             return SuccessMessage(_values[index], "Get value successfully.");
         }
     }

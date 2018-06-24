@@ -31,13 +31,13 @@ namespace TrungNguyenDlu.LogApi.Infrastructure.Log
                 var result = task.Result;
                 var output = result.Content.ReadAsStringAsync().GetAwaiter().GetResult();
 
-                WriterLog(input, output, request.Method.Method.ToUpper(), url);
+                WriteLog(input, output, request.Method.Method.ToUpper(), url);
 
                 return result;
             }, cancellationToken);
         }
 
-        private void WriterLog(string input, string output, string method, string url)
+        private void WriteLog(string input, string output, string method, string url)
         {
             var response = output.FromJson<ResponseModel<object>>();
             if (response.Success)
